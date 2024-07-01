@@ -33,6 +33,7 @@
 
 #include "raylib.h"
 #include "rlgl.h"
+#include "implot.h"
 
 #include <math.h>
 #include <map>
@@ -432,8 +433,10 @@ static void SetupGlobals(void)
 void rlImGuiBeginInitImGui(void)
 {
     SetupGlobals();
-    if (GlobalContext == nullptr)
+    if (GlobalContext == nullptr) {
         GlobalContext = ImGui::CreateContext(nullptr);
+        ImPlot::CreateContext();
+    }
     SetupKeymap();
 
     ImGuiIO& io = ImGui::GetIO();
@@ -462,6 +465,7 @@ void rlImGuiReloadFonts(void)
 void rlImGuiBegin(void)
 {
     ImGui::SetCurrentContext(GlobalContext);
+    
     rlImGuiBeginDelta(GetFrameTime());
 }
 
@@ -488,6 +492,7 @@ void rlImGuiShutdown(void)
     ImGui::SetCurrentContext(GlobalContext);
     ImGui_ImplRaylib_Shutdown();
 
+    ImPlot::DestroyContext();
     ImGui::DestroyContext(GlobalContext);
     GlobalContext = nullptr;
 }

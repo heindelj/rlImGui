@@ -11,6 +11,8 @@
 #include "imgui_impl_raylib.h"
 #include "raylib.h"
 
+#define IMGUI_ENABLE_FREETYPE
+
 // Main code
 int main(int, char**)
 {
@@ -44,7 +46,7 @@ int main(int, char**)
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/DroidSans.ttf", 16.0f);
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/Roboto-Medium.ttf", 16.0f);
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/Cousine-Regular.ttf", 15.0f);
-    ImFont* font = io.Fonts->AddFontFromFileTTF("resources/driusstraight.ttf", 18.0f, nullptr, io.Fonts->GetGlyphRangesJapanese());
+    ImFont* font = io.Fonts->AddFontFromFileTTF("/usr/share/fonts/truetype/open-sans/OpenSans-Regular.ttf", 18.0f);
     IM_ASSERT(font != nullptr);
 
     // required to be called to cache the font texture with raylib

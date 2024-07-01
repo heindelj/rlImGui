@@ -250,19 +250,19 @@ const char* AssetBrowserPanel::GetFileIcon(const char* filename)
 
     if (ext != nullptr)
     {
-        if (stricmp(ext, ".png") == 0)
+        if (strcasecmp(ext, ".png") == 0)
             return ICON_FA_FILE_IMAGE;
 
-        if (stricmp(ext, ".wav") == 0 || stricmp(ext, ".mp3") == 0 || stricmp(ext, ".oog") == 0)
+        if (strcasecmp(ext, ".wav") == 0 || strcasecmp(ext, ".mp3") == 0 || strcasecmp(ext, ".oog") == 0)
             return ICON_FA_FILE_AUDIO;
 
-        if (stricmp(ext, ".ttf") == 0 || stricmp(ext, ".otf") == 0 || stricmp(ext, ".fnt") == 0)
+        if (strcasecmp(ext, ".ttf") == 0 || strcasecmp(ext, ".otf") == 0 || strcasecmp(ext, ".fnt") == 0)
             return ICON_FA_FONT;
 
-        if (stricmp(ext, ".txt") == 0 || stricmp(ext, ".md") == 0)
+        if (strcasecmp(ext, ".txt") == 0 || strcasecmp(ext, ".md") == 0)
             return ICON_FA_FILE_LINES;
 
-        if (stricmp(ext, ".lua") == 0 || stricmp(ext, ".c") == 0 || stricmp(ext, ".h") == 0 || stricmp(ext, ".cpp") == 0)
+        if (strcasecmp(ext, ".lua") == 0 || strcasecmp(ext, ".c") == 0 || strcasecmp(ext, ".h") == 0 || strcasecmp(ext, ".cpp") == 0)
             return ICON_FA_FILE_CODE;
     }
     return ICON_FA_FILE;

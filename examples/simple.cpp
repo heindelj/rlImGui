@@ -16,6 +16,7 @@
 
 #include "imgui.h"
 #include "rlImGui.h"
+#include "implot.h"
 
 int main(int argc, char* argv[])
 {
@@ -40,7 +41,8 @@ int main(int argc, char* argv[])
 
 		// show ImGui Content
 		bool open = true;
-		ImGui::ShowDemoWindow(&open);
+		//ImGui::ShowDemoWindow(&open);
+		ImPlot::ShowDemoWindow();
 
 		// end ImGui Content
 		rlImGuiEnd();
